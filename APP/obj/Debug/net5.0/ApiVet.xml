@@ -1,0 +1,391 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiVet</name>
+    </assembly>
+    <members>
+        <member name="M:ApiVet.Controllers.CachorrosController.Post(ApiVet.DTO.CachorroDTO)">
+             <summary>
+             Inclui um novo cachorro
+             </summary>
+             <remarks>
+             Exemplo de request:
+            
+                 POST /api/v1/Cachorros/Criar
+                 {
+                     "nome": "Lessie",
+                     "raca": "Bulldog",
+                     "dataNascimento": "2022-07-23T00:40:31.780Z",
+                     "genero": "Fêmea",
+                     "peso": 10,
+                     "isAtivo": true,
+                     "clienteID": 1
+                 }
+             </remarks>
+             <param name="cachorroTemp"></param>
+             <returns>Retorna a inclusão de um novo cachorro</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.CachorrosController.Get">
+            <summary>
+            Exibe todos os cachorros cadastrados
+            </summary>
+            <returns>Retorna todos os cachorros Ativos</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.CachorrosController.GetById(System.Int32)">
+            <summary>
+            Pesquisa um cachorro pelo seu Id
+            </summary>
+            <param name="id"></param>
+            <returns>Retorna o cachorro</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.CachorrosController.GetCachorrosByCpf(System.String)">
+            <summary>
+            Exibe todos os cachorros do mesmo Cliente pelo CPF 
+            </summary>
+            <param name="Cpf"></param>
+            <returns>Retorna todos os cachorros vinculados ao Cliente</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.CachorrosController.Patch(System.Int32,ApiVet.DTO.CachorroUpdateDTO)">
+             <summary>
+             Atualiza informações do cachorro pelo seu Id
+             </summary>
+             <remarks>
+             O que não será alterado, basta apagar!
+             
+             Exemplo de request:
+            
+                 PATCH /api/v1/Cachorros/Atualizar
+                 {
+                  "nome": "Laika",
+                  "raca": "Bulldog",
+                  "dataNascimento": "2022-07-23T00:40:31.780Z",
+                  "genero": "Fêmea",
+                  "peso": 10,
+                  "isAtivo": true,
+                  "clienteID": 1
+                 }
+             </remarks>
+             <param name="id"></param>
+             <param name="cachorroDto"></param>
+             <returns>Retorna o cachorro pesquisado atualizado</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.CachorrosController.Delete(System.Int32)">
+            <summary>
+            Desativa um cachorro pelo seu Id
+            </summary>
+            <param name="id"></param>
+            <returns>Retorna o cachorro inativo</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.CachorrosController.GetRacas">
+            <summary>
+            Exibe as 20 primeiras Raças da TheDogApi
+            </summary>
+            <returns>Retorna as  20 primeiras Raças da TheDogApio</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.CachorrosController.GetRacasByName(System.String)">
+            <summary>
+            Exibe todas as Raças que contém o nome pesquisado da TheDogApi
+            </summary>
+            <param name="Nome"></param>
+            <returns>Retorna a lista das Raças que contém o nome pesquisado</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.CachorrosController.GetPublicImages">
+            <summary>
+            Exibe as 20 primeiras Imagens Públicas das Raças da TheDogApi
+            </summary>
+            <returns>Retorna as Imagens Públicas 20 primeiras Raças da TheDogApio</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.ClientesController.Post(ApiVet.DTO.ClienteDTO)">
+             <summary>
+             Inclui um novo cliente
+             </summary>
+             
+             <remarks>
+             Exemplo de request:
+            
+                 POST /api/v1/Clientes/Criar
+                 {
+                      "nome": "Carlos",
+                      "cpf": "00000000000",
+                      "endereco": "Rua da Aurora, 555",
+                     "telefone": "999999999"
+                 }
+             </remarks>
+             <param name="clienteTemp"></param>
+             <returns>Retorna a inclusão de um novo cliente</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.ClientesController.Get">
+            <summary>
+            Exibe todos os clientes cadastrados
+            </summary>
+            <returns>Retorna todos os clientes Ativos</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.ClientesController.GetById(System.Int32)">
+            <summary>
+            Pesquisa um cliente pelo seu Id
+            </summary>
+            <param name="id"></param>
+            <returns>Retorna o cliente</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.ClientesController.GetByCpf(System.String)">
+            <summary>
+            Pesquisa um cliente pelo seu CPF
+            </summary>
+            <param name="Cpf"></param>
+            <returns>Retorna o cliente</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.ClientesController.Patch(System.Int32,ApiVet.DTO.ClienteUpdateDTO)">
+            <summary>
+            Atualiza informações do cliente pelo seu Id
+            </summary>
+            <remarks>
+            O que não será alterado, basta apagar!
+            
+            Exemplo de request:
+            
+                    PATCH /api/v1/Clientes/atualizar
+                    {
+                       "nome": "Victor",
+                       "cpf": "00000000000",
+                       "endereco": "Rua da Aurora, 555",
+                       "telefone": "999999999",
+                       "isAtivo": true
+                    }
+            </remarks>
+            <param name="id"></param>
+            <param name="clienteDto"></param>
+            <returns>Retorna o cliente pesquisado atualizado </returns>
+        </member>
+        <member name="M:ApiVet.Controllers.ClientesController.Delete(System.Int32)">
+            <summary>
+            Desativa um cliente pelo seu Id
+            </summary>
+            <param name="id"></param>
+            <returns>Retorna o cliente inativo</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.ConsultasController.Post(ApiVet.DTO.ConsultaDTO)">
+             <summary>
+             Cadastra uma vova consulta
+             </summary>
+             <remarks>
+             Exemplo de request:
+            
+                 POST /api/v1/Consultas/Criar
+                 {
+                 "pesoAtual": 10,
+                 "sintomas": "Informar sintomas do animal",
+                 "diagnostico": "Informar diagnóstico",
+                 "comentarios": "Informar Tratamento",
+                 "veterinarioId": 1,
+                 "cachorroId": 2,
+                 "clienteID": 1    
+                 }
+             </remarks>
+             <param name="consultaTemp"></param>
+             <returns>Retorna a inclusão de uma nova consulta</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.ConsultasController.Get">
+            <summary>
+            Exibe todos as consultas cadastradas
+            </summary>
+            <returns>Retorna todos as consultas</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.ConsultasController.GetById(System.Int32)">
+            <summary>
+            Pesquisa uma consulta pelo seu Id
+            </summary>
+            <param name="id"></param>
+            <returns>Retorna a consulta</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.ConsultasController.GetByIdCachorro(System.Int32)">
+            <summary>
+            Pesquisa consultas pelo Id do cachorro
+            </summary>
+            <param name="id"></param>
+            <returns>Retorna todas as consultas do cachorro pesquisado</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.ConsultasController.GetByCodCrmv(System.Int32)">
+            <summary>
+            Pesquisa consultas pelo Crmv do veterinário
+            </summary>
+            <param name="CodCrmv"></param>
+            <returns>Retorna todas as consultas do veterinário pesquisado em ordem decrescente</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.ConsultasController.GetByCpfCliente(System.String)">
+            <summary>
+            Pesquisa consultas pelo Cpf do cliente
+            </summary>
+            <param name="Cpf"></param>
+            <returns>Retorna todas as consultas do Cpf do cliente pesquisado em ordem decrescente</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.ConsultasController.Patch(System.Int32,ApiVet.DTO.ConsultaUpdateDTO)">
+            <summary>
+            Atualiza informações da consulta pelo seu Id
+            </summary>
+            <remarks>
+            O que não será alterado, basta apagar!
+            
+            Exemplo de request:
+            
+                PATCH /api/v1/Consultas/Atualizar
+                {
+                "pesoAtual": 20,
+                "sintomas": "Informar sintomas do animal",
+                "diagnostico": "Informar diagnóstico",
+                "comentarios": "Informar Tratamento",
+                "veterinarioId": 1,
+                "cachorroId": 2,
+                "clienteID": 1,
+                "isAtivo": true      
+                 }
+            </remarks>
+            <param name="id"></param>
+            <param name="consultaDto"></param>
+            <returns>Retorna a consulta atualizada</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.ConsultasController.Delete(System.Int32)">
+            <summary>
+            Desativa uma consulta pelo seu Id
+            </summary>
+            <param name="id"></param>
+            <returns>Retorna a consulta inativa</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.UsuariosController.Registro(ApiVet.DTO.UsuarioDTO)">
+             <summary>
+             Registra um novo usuário no sistema
+             </summary>
+              <remarks>
+             Exemplo de request:
+            
+                 POST /api/v1/Usuarios/Registro
+                 {
+                 "email": "carlos@example.com",
+                 "senha": "carlos15",
+                  "isCliente": true
+                 }
+             </remarks>
+             <param name="usuarioTemp"></param>
+             <returns>Retorna a inclusão de um novo usuário</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.UsuariosController.Login(System.String,System.String)">
+             <summary>
+             Realiza o Login de um usuário
+             </summary>
+             <remarks>
+             Exemplo de request:
+            
+                 POST /api/v1/Usuarios/Login
+                 {
+                 "email": "carlos@example.com",
+                 "senha": "carlos15",
+                 }
+             </remarks>
+             <param name="email"></param>
+             <param name="senha"></param>
+             <returns>Loga o usuário no sistema</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.UsuariosController.Get">
+            <summary>
+            Exibe todos os usuários cadastrados
+            </summary>
+            <returns>Retorna todos os usuários Ativos</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.UsuariosController.GetById(System.Int32)">
+            <summary>
+            Pesquisa um usuário pelo seu Id
+            </summary>
+            <param name="id"></param>
+            <returns>Retorna o usuário</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.UsuariosController.Patch(System.Int32,ApiVet.DTO.UsuarioUpdateDTO)">
+             <summary>
+             Atualiza informações do usuário pelo seu Id
+             </summary>
+             <remarks>
+             O que não será alterado, basta apagar!
+             
+             Exemplo de request:
+            
+                 PATCH /api/v1/Usuários
+                 {
+                 "email": "carlos",
+                  "senha": 000013,
+                 "isAtivo": true
+                 }
+             </remarks>
+             /// <param name="id"></param>
+             <param name="usuarioDto"></param>
+             <returns>Retorna o veterinário pesquisado atualizado </returns>
+        </member>
+        <member name="M:ApiVet.Controllers.UsuariosController.Delete(System.Int32)">
+            <summary>
+            Desativa um usuario pelo seu Id
+            </summary>
+            <param name="id"></param>
+            <returns>Retorna o usuario inativo</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.VeterinariosController.Post(ApiVet.DTO.VeterinarioDTO)">
+             <summary>
+             Inclui um novo veterinário
+             </summary>
+             <remarks>
+             Exemplo de request:
+            
+                 POST /api/v1/Veterinarios/Criar
+                 {
+                  "nome": "Carlos",
+                  "codCrmv": 000000
+                 }
+             </remarks>
+             <param name="veterinarioTemp"></param>
+             <returns>Retorna a inclusão de um novo veterinário</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.VeterinariosController.Get">
+            <summary>
+            Exibe todos os veterinários cadastrados
+            </summary>
+            <returns>Retorna todos os veterinários Ativos</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.VeterinariosController.GetById(System.Int32)">
+            <summary>
+            Pesquisa um veterinário pelo seu Id
+            </summary>
+            <param name="id"></param>
+            <returns>Retorna o veterinário</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.VeterinariosController.GetByCrmv(System.Int32)">
+            <summary>
+            Pesquisa um veterinário pelo seu Crmv
+            </summary>
+            <param name="Crmv"></param>
+            <returns>Retorna o veterinário</returns>
+        </member>
+        <member name="M:ApiVet.Controllers.VeterinariosController.Patch(System.Int32,ApiVet.DTO.VeterinarioUpdateDTO)">
+             <summary>
+             Atualiza informações do veterinário pelo seu Id
+             </summary>
+              <remarks>
+             O que não será alterado, basta apagar!
+             
+             Exemplo de request:
+            
+                 PATCH /api/v1/Veterinarios/Atualizar
+                 {
+                  "nome": "Carlos",
+                  "codCrmv": 000013,
+                  "isAtivo": true
+                 }
+             </remarks>
+             /// <param name="id"></param>
+             <param name="veterinarioDto"></param>
+             <returns>Retorna o veterinário pesquisado atualizado </returns>
+        </member>
+        <member name="M:ApiVet.Controllers.VeterinariosController.Delete(System.Int32)">
+            <summary>
+            Desativa um veterinário pelo seu Id
+            </summary>
+            <param name="id"></param>
+            <returns>Retorna o veterinário inativo</returns>
+        </member>
+    </members>
+</doc>
